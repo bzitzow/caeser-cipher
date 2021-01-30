@@ -4,12 +4,12 @@ describe("CaeserCipher", () => {
     let message;
     let shift;
 
-    describe("encode: given 'a'", () => {
+    describe("the beginning of the alphabet ('a')", () => {
         beforeEach(() => {
             message = "a";
         });
 
-        describe("with a shift of 1", () => {
+        describe("with a right shift of 1", () => {
             beforeEach(() => {
                 shift = 1;
             });
@@ -19,7 +19,7 @@ describe("CaeserCipher", () => {
             });
         });
 
-        describe("with a shift of 2", () => {
+        describe("with a right shift of 2", () => {
             beforeEach(() => {
                 shift = 2;
             });
@@ -28,19 +28,29 @@ describe("CaeserCipher", () => {
                 expect(CeaserCipher.encode(message, shift)).toBe("c");
             });
         });
+
+        describe("with a left shift of -1", () => {
+            beforeEach(() => {
+                shift = -1;
+            });
+
+            it("returns 'z'", () => {
+                expect(CeaserCipher.encode(message, shift)).toBe("z");
+            });
+        });
     });
 
-    describe("encode: given 'z' (the end of the alphabet)", () => {
+    describe("the end of the alphabet ('z')", () => {
         beforeEach(() => {
             message = "z";
         });
 
-        describe("with a shift of 1", () => {
+        describe("with a right shift of 1", () => {
             beforeEach(() => {
                 shift = 1;
             });
 
-            it("returns 'a", () => {
+            it("returns 'a'", () => {
                 expect(CeaserCipher.encode(message, shift)).toBe("a");
             });
         });
@@ -72,11 +82,16 @@ describe("CaeserCipher", () => {
         beforeEach(() => {
             // https://en.wikipedia.org/wiki/Caesar_cipher
             message = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            encrypted = "XYZABCDEFGHIJKLMNOPQRSTUVW";
             shift = 23;
         });
 
         it("encodes the alphabet as given with a right shift of 23", () => {
-            expect(CeaserCipher.encode(message, shift)).toBe("XYZABCDEFGHIJKLMNOPQRSTUVW");
+            expect(CeaserCipher.encode(message, shift)).toBe(encrypted);
+        });
+
+        it("decodes the encrypted example with a left shift of 23", () => {
+            expect(CeaserCipher.encode(encrypted, -shift)).toBe(message);
         });
     });
 });
