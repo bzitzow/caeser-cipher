@@ -1,12 +1,12 @@
 const CeaserCypher = require("./CaeserCypher");
 
 describe("CaeserCypher", () => {
-    let englishString;
+    let message;
     let shift;
 
     describe("encode: given 'a'", () => {
         beforeEach(() => {
-            englishString = "a";
+            message = "a";
         });
 
         describe("with a shift of 1", () => {
@@ -15,7 +15,7 @@ describe("CaeserCypher", () => {
             });
 
             it("returns 'b'", () => {
-                expect(CeaserCypher.encode(englishString, shift)).toBe("b");
+                expect(CeaserCypher.encode(message, shift)).toBe("b");
             });
         });
 
@@ -25,7 +25,23 @@ describe("CaeserCypher", () => {
             });
 
             it("returns 'c'", () => {
-                expect(CeaserCypher.encode(englishString, shift)).toBe("c");
+                expect(CeaserCypher.encode(message, shift)).toBe("c");
+            });
+        });
+    });
+
+    describe("encode: given 'z' (the end of the alphabet)", () => {
+        beforeEach(() => {
+            message = "z";
+        });
+
+        describe("with a shift of 1", () => {
+            beforeEach(() => {
+                shift = 1;
+            });
+
+            it("returns 'a", () => {
+                expect(CeaserCypher.encode(message, shift)).toBe("a");
             });
         });
     });

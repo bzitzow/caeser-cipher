@@ -1,9 +1,13 @@
+const lengthOfAlphabet = 26;
+const asciiStart = 97;
+
 CaeserCypher = {
     encode: (string, shift) => {
-        const encodedString = String.fromCharCode(string.charCodeAt(0) + shift);
+        const asciiCode = string.charCodeAt(0);
+        const asciiCodeShifted = (asciiCode + shift - asciiStart) % lengthOfAlphabet + asciiStart;
 
-        return encodedString;
-    }
-}
+        return String.fromCharCode(asciiCodeShifted);
+    },
+};
 
 module.exports = CaeserCypher;
