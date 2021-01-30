@@ -1,7 +1,6 @@
 CaeserCypher = {
-    encode: (string) => {
-        const key = 1;
-        const encodedString = String.fromCharCode(string.charCodeAt(0) + key);
+    encode: (string, shift) => {
+        const encodedString = String.fromCharCode(string.charCodeAt(0) + shift);
 
         return encodedString;
     }
