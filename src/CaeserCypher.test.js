@@ -45,4 +45,15 @@ describe("CaeserCypher", () => {
             });
         });
     });
+
+    describe("given a message with spaces and punctuation", () => {
+        beforeEach(() => {
+            message = "this is a message with spaces and punctuation.";
+            shift = 13;
+        });
+
+        it("does not shift the spaces and punctuation",  () => {
+            expect(CeaserCypher.encode(message, shift)).toBe("guvf vf n zrffntr jvgu fcnprf naq chapghngvba.");
+        });
+    });
 });

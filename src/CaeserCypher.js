@@ -3,10 +3,14 @@ const asciiStart = 97;
 
 CaeserCypher = {
     encode: (string, shift) => {
-        const asciiCode = string.charCodeAt(0);
-        const asciiCodeShifted = (asciiCode + shift - asciiStart) % lengthOfAlphabet + asciiStart;
+        const shiftCharacters = (character) => {
+            const asciiCode = character.charCodeAt(0);
+            const asciiCodeShifted = (asciiCode + shift - asciiStart) % lengthOfAlphabet + asciiStart;
 
-        return String.fromCharCode(asciiCodeShifted);
+            return String.fromCharCode(asciiCodeShifted);
+        }
+
+        return string.replace(/[a-z]/g, shiftCharacters);
     },
 };
 
