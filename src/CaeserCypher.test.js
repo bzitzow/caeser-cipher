@@ -56,4 +56,15 @@ describe("CaeserCypher", () => {
             expect(CeaserCypher.encode(message, shift)).toBe("guvf vf n zrffntr jvgu fcnprf naq chapghngvba.");
         });
     });
+
+    describe("given a John Muir quote", () => {
+        beforeEach(() => {
+            message = "Who wouldn’t be a mountaineer! Up here all the world’s prizes seem nothing.";
+            shift = 1;
+        });
+
+        it("encodes the capital letters, too", () => {
+            expect(CeaserCypher.encode(message, shift)).toBe("Xip xpvmeo’u cf b npvoubjoffs! Vq ifsf bmm uif xpsme’t qsjaft tffn opuijoh.");
+        });
+    });
 });

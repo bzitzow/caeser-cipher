@@ -10,7 +10,7 @@ CaeserCypher = {
             return String.fromCharCode(asciiCodeShifted);
         }
 
-        return string.replace(/[a-z]/g, shiftCharacters);
+        return string.replace(/[a-z]/ig, shiftCharacters);
     },
 };
 
