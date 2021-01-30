@@ -1,15 +1,15 @@
 const CeaserCypher = require("./CaeserCypher");
 
 describe("CaeserCypher", () => {
-    describe("given an english string", () => {
+    describe("encode: given 'a'", () => {
         let englishString;
 
         beforeEach(() => {
-            englishString = "a string";
+            englishString = "a";
         });
 
-        it("returns the string", () => {
-            expect(CeaserCypher.encode(englishString)).toBe(englishString);
+        it("returns returns 'b'", () => {
+            expect(CeaserCypher.encode(englishString)).toBe("b");
         });
     });
 });
