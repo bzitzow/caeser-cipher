@@ -1,6 +1,6 @@
-const CeaserCypher = require("./CaeserCypher");
+const CeaserCipher = require("./CaeserCipher");
 
-describe("CaeserCypher", () => {
+describe("CaeserCipher", () => {
     let message;
     let shift;
 
@@ -15,7 +15,7 @@ describe("CaeserCypher", () => {
             });
 
             it("returns 'b'", () => {
-                expect(CeaserCypher.encode(message, shift)).toBe("b");
+                expect(CeaserCipher.encode(message, shift)).toBe("b");
             });
         });
 
@@ -25,7 +25,7 @@ describe("CaeserCypher", () => {
             });
 
             it("returns 'c'", () => {
-                expect(CeaserCypher.encode(message, shift)).toBe("c");
+                expect(CeaserCipher.encode(message, shift)).toBe("c");
             });
         });
     });
@@ -41,7 +41,7 @@ describe("CaeserCypher", () => {
             });
 
             it("returns 'a", () => {
-                expect(CeaserCypher.encode(message, shift)).toBe("a");
+                expect(CeaserCipher.encode(message, shift)).toBe("a");
             });
         });
     });
@@ -53,7 +53,7 @@ describe("CaeserCypher", () => {
         });
 
         it("does not shift the spaces and punctuation",  () => {
-            expect(CeaserCypher.encode(message, shift)).toBe("guvf vf n zrffntr jvgu fcnprf naq chapghngvba.");
+            expect(CeaserCipher.encode(message, shift)).toBe("guvf vf n zrffntr jvgu fcnprf naq chapghngvba.");
         });
     });
 
@@ -64,7 +64,7 @@ describe("CaeserCypher", () => {
         });
 
         it("encodes the capital letters, too", () => {
-            expect(CeaserCypher.encode(message, shift)).toBe("Xip xpvmeo’u cf b npvoubjoffs! Vq ifsf bmm uif xpsme’t qsjaft tffn opuijoh.");
+            expect(CeaserCipher.encode(message, shift)).toBe("Xip xpvmeo’u cf b npvoubjoffs! Vq ifsf bmm uif xpsme’t qsjaft tffn opuijoh.");
         });
     });
 
@@ -76,7 +76,7 @@ describe("CaeserCypher", () => {
         });
 
         it("encodes the alphabet as given with a right shift of 23", () => {
-            expect(CeaserCypher.encode(message, shift)).toBe("XYZABCDEFGHIJKLMNOPQRSTUVW");
+            expect(CeaserCipher.encode(message, shift)).toBe("XYZABCDEFGHIJKLMNOPQRSTUVW");
         });
     });
 });

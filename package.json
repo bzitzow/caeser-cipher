@@ -1,7 +1,7 @@
 {
-  "name": "caeser-cypher",
+  "name": "caeser-cipher",
   "version": "1.0.0",
-  "description": "An example caesar cypher for Zennify.",
+  "description": "An example caesar cipher for Zennify.",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bzitzow/caeser-cypher.git"
+    "url": "git+https://github.com/bzitzow/caeser-cipher.git"
   },
   "author": "Brian Zitzow <bzitzow@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bzitzow/caeser-cypher/issues"
+    "url": "https://github.com/bzitzow/caeser-cipher/issues"
   },
-  "homepage": "https://github.com/bzitzow/caeser-cypher#readme"
+  "homepage": "https://github.com/bzitzow/caeser-cipher#readme"
 }

@@ -1,7 +1,7 @@
 const LENGTH_OF_ALPHABET = 26;
 const ASCII_START = { UPPERCASE: 65, LOWERCASE: 97};
 
-CaeserCypher = {
+CaeserCipher = {
     encode: (string, shift) => {
         const shiftCharacters = (character) => {
             const asciiCode = character.charCodeAt(0);
@@ -15,4 +15,4 @@ CaeserCypher = {
     },
 };
 
-module.exports = CaeserCypher;
+module.exports = CaeserCipher;
