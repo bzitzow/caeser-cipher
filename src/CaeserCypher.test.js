@@ -67,4 +67,16 @@ describe("CaeserCypher", () => {
             expect(CeaserCypher.encode(message, shift)).toBe("Xip xpvmeo’u cf b npvoubjoffs! Vq ifsf bmm uif xpsme’t qsjaft tffn opuijoh.");
         });
     });
+
+    describe("given the wikipedia example", () => {
+        beforeEach(() => {
+            // https://en.wikipedia.org/wiki/Caesar_cipher
+            message = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            shift = 23;
+        });
+
+        it("encodes the alphabet as given with a right shift of 23", () => {
+            expect(CeaserCypher.encode(message, shift)).toBe("XYZABCDEFGHIJKLMNOPQRSTUVW");
+        });
+    });
 });

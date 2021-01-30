@@ -1,11 +1,12 @@
-const lengthOfAlphabet = 26;
-const asciiStart = 97;
+const LENGTH_OF_ALPHABET = 26;
+const ASCII_START = { UPPERCASE: 65, LOWERCASE: 97};
 
 CaeserCypher = {
     encode: (string, shift) => {
         const shiftCharacters = (character) => {
             const asciiCode = character.charCodeAt(0);
-            const asciiCodeShifted = (asciiCode + shift - asciiStart) % lengthOfAlphabet + asciiStart;
+            const asciiStart = asciiCode >= ASCII_START.LOWERCASE ? ASCII_START.LOWERCASE : ASCII_START.UPPERCASE;
+            const asciiCodeShifted = (asciiCode + shift - asciiStart) % LENGTH_OF_ALPHABET + asciiStart;
 
             return String.fromCharCode(asciiCodeShifted);
         }
